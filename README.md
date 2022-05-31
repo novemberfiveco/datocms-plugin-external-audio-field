@@ -34,9 +34,9 @@ Do you know some other options that I forgot? Check the [Contributing](CONTRIBUT
 
 - **Reporting a bug**: [Open an issue](/issues/new?assignees=&labels=bug&template=--bug_report.md&title=) explaining your application's setup and the bug you're encountering.
 
-- **Suggesting an improvement**: [Open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=&template=---bug-report.md&title=) explaining your improvement or feature so we can discuss and learn more.
+- **Suggesting an improvement**: [Open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=&template=---feature-request.md&title=) explaining your improvement or feature so we can discuss and learn more.
 
-- **Submitting code changes**: For small fixes, feel free to [open a pull request](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/pulls) with a description of your changes. For large changes, please first [open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=&template=---bug-report.md&title=) so we can discuss if and how the changes should be implemented.
+- **Submitting code changes**: For small fixes, feel free to [open a pull request](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/pulls) with a description of your changes. For large changes, please first [open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=&template=---feature-request.md&title=) so we can discuss if and how the changes should be implemented.
 
 For more information check the [CONTRIBUTING.md](CONTRIBUTING.md) document.
 
