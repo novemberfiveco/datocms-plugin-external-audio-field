@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-<!-- 💙 Thanks for your time to make this plugin better with your feedback 💙
+<!-- ❤️ Thanks for your time to make this plugin better with your feedback ❤️
 
 **IMPORTANT** Before reporting a bug please make sure that you have checked the [existing issues](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues): 
 
