@@ -1,9 +1,10 @@
 {
   "name": "dato-cms-external-audio-field-plugin",
-  "description": "A DatoCMS field plugin that allows content editors to easily embed an audio track/playlist from mixcloud, soundcloud or spotify.",
+  "description": "Add a Mixcloud, Soundcloud or Spotify embed field in DatoCMS.",
+  "homepage": "https://github.com/novemberfiveco/datocms-plugin-external-audio-field/blob/master/README.md",
+  "license": "MIT",
   "keywords": [
-    "datocms",
-    "plugin",
+    "datocms-plugin",
     "embed",
     "audio",
     "spotify",
@@ -50,8 +51,8 @@
     "eslint-plugin-simple-import-sort": "^7.0.0"
   },
   "datoCmsPlugin": {
-    "title": "Audio embed field",
-    "previewImage": "docs/preview.png",
+    "title": "External Audio Field",
+    "previewImage": "docs/preview.mp4",
     "coverImage": "docs/cover.png",
     "entryPoint": "build/index.html"
   }

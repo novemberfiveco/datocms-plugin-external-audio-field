@@ -13,15 +13,15 @@ connect({
   manualFieldExtensions() {
     return [
       {
-        id: 'audioEmbed',
-        name: 'Audio Embed',
+        id: 'externalAudio',
+        name: 'External Audio Field',
         type: 'editor',
         fieldTypes: ['json'],
       },
     ];
   },
   renderFieldExtension(fieldExtensionId: string, ctx: RenderFieldExtensionCtx) {
-    if (fieldExtensionId === 'audioEmbed') {
+    if (fieldExtensionId === 'externalAudio') {
       return render(<AudioEmbed ctx={ctx} />);
     }
   },
