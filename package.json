@@ -1,0 +1,58 @@
+{
+  "name": "dato-cms-external-audio-field-plugin",
+  "description": "A DatoCMS field plugin that allows content editors to easily embed an audio track/playlist from mixcloud, soundcloud or spotify.",
+  "keywords": [
+    "datocms",
+    "plugin",
+    "embed",
+    "audio",
+    "spotify",
+    "soundcloud",
+    "mixcloud"
+  ],
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {
+    "@types/node": "^16.11.36",
+    "@types/react": "^17.0.45",
+    "datocms-plugin-sdk": "^0.5.2",
+    "datocms-react-ui": "^0.5.2",
+    "lodash": "^4.17.21",
+    "query-string": "^7.1.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.7.2"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER='none' PUBLIC_URL='/' react-scripts start",
+    "build": "cross-env PUBLIC_URL='.' react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/react-dom": "^18.0.5",
+    "cross-env": "^7.0.3",
+    "eslint-plugin-simple-import-sort": "^7.0.0"
+  },
+  "datoCmsPlugin": {
+    "title": "Audio embed field",
+    "previewImage": "docs/preview.png",
+    "coverImage": "docs/cover.png",
+    "entryPoint": "build/index.html"
+  }
+}

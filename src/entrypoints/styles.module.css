@@ -1,0 +1,26 @@
+.inspector {
+  margin-top: var(--spacing-l);
+}
+
+.errorLabel {
+  margin-top: var(--spacing-s);
+}
+
+.inputButtonGroup {
+  display: flex;
+  gap: var(--spacing-m);
+}
+
+.group:not(:last-of-type) {
+  margin-bottom: var(--spacing-l);
+}
+
+.iframePreview {
+  margin-top: var(--spacing-l);
+}
+
+.checkboxGroup {
+  margin-bottom: var(--spacing-l);
+  display: flex;
+  gap: var(--spacing-m);
+}

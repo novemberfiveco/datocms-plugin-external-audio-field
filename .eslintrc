@@ -1,0 +1,25 @@
+{
+  "extends": ["react-app"],
+  "plugins": ["import", "simple-import-sort"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          ["^\\u0000|^react$"],
+          ["^@?\\w"],
+          ["^config"],
+          ["^[^.]"],
+          ["^assets"],
+          ["^packages"],
+          ["^utils"],
+          ["^types|^store|^services|^constants|^hooks|^theme|^connectors"],
+          ["^pages"],
+          ["^components"],
+          ["^\\."]
+        ]
+      }
+    ]
+  }
+}
