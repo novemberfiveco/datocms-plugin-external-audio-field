@@ -11,7 +11,7 @@
     "soundcloud",
     "mixcloud"
   ],
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "dependencies": {
     "@types/node": "^16.11.36",
