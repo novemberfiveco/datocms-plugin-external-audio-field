@@ -27,7 +27,11 @@ const PlayerOptions = ({
 
   const handleOptionChange = (name: string, option?: VariantOption | null) => {
     setOptions((prev) => {
-      const newState = { ...prev, [name]: option, toggles: option?.toggles };
+      const newState = {
+        ...prev,
+        [name]: option,
+        toggles: option?.defaultToggles,
+      };
       onOptionsChange(newState);
       return newState;
     });
@@ -59,7 +63,7 @@ const PlayerOptions = ({
         <div className={classes.group}>
           <FormLabel htmlFor="">Options</FormLabel>
           <div className={classes.checkboxGroup}>
-            {Object.keys(options?.variant?.toggles ?? {}).map((key) => {
+            {Object.keys(options?.variant?.defaultToggles ?? {}).map((key) => {
               return (
                 <div key={key}>
                   <input

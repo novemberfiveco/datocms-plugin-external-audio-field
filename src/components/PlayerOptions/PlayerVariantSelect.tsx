@@ -5,7 +5,7 @@ import { FormLabel, SelectInput } from 'datocms-react-ui';
 export type VariantOption = {
   label: string;
   value: { [index: string]: string | number | boolean };
-  toggles: { [index: string]: boolean };
+  defaultToggles: { [index: string]: boolean };
 };
 
 interface Props {

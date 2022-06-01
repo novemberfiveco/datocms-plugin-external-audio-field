@@ -16,7 +16,7 @@ export const getProviderDefaultOptions = (
     ? {
         label: variantOptions.default.label ?? '',
         value: _omit(variantOptions.default, 'toggles'),
-        toggles: variantOptions.default?.toggles,
+        defaultToggles: variantOptions.default?.toggles,
       }
     : undefined;
 
@@ -24,9 +24,10 @@ export const getProviderDefaultOptions = (
     options: Object.values(variantOptions ?? {}).map((value) => ({
       label: value.label,
       value: _omit(value, 'toggles'),
-      toggles: value.toggles,
+      defaultToggles: value.toggles,
     })),
     variant: formValues?.options?.variant ?? defaultVariant,
-    toggles: formValues?.options?.toggles ?? defaultVariant?.toggles ?? {},
+    toggles:
+      formValues?.options?.toggles ?? defaultVariant?.defaultToggles ?? {},
   };
 };
