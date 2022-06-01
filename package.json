@@ -54,6 +54,7 @@
     "title": "External Audio Field",
     "previewImage": "docs/preview.mp4",
     "coverImage": "docs/cover.png",
-    "entryPoint": "build/index.html"
+    "entryPoint": "build/index.html",
+    "permissions": []
   }
 }
