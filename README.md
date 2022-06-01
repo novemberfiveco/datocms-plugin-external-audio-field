@@ -28,6 +28,48 @@ You should end up with something like this:
 
 ![External Audio Field result](docs/preview.png)
 
+Output:
+
+```
+{
+  "oEmbed": {
+    "version": 1,
+    "type": "rich",
+    "provider_name": "SoundCloud",
+    "provider_url": "https://soundcloud.com",
+    "height": 400,
+    "width": "100%",
+    "title": "BURN BEAST 001 - DABOUS by MDLBEAST",
+    "description": "@waleed-abudabous Is a homegrown Saudi DJ/producer thats been crafting music for five years now and is known for his unique style of mixing various House Music genres ⚡",
+    "thumbnail_url": "https://i1.sndcdn.com/artworks-cPivDyutshSD9GQz-wScohg-t500x500.jpg",
+    "html": "<iframe width=\"100%\" height=\"160\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?height=160&amp;label=Default&amp;show_artwork=true&amp;show_comments=true&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1224023323&amp;visual=true\"></iframe>",
+    "author_name": "MDLBEAST",
+    "author_url": "https://soundcloud.com/mdlbeast"
+  },
+  "options": {
+    "variant": {
+      "label": "Default",
+      "value": {
+        "label": "Default",
+        "height": 160
+      },
+      "defaultToggles": {
+        "show_artwork": true,
+        "show_comments": false,
+        "visual": false
+      }
+    },
+    "toggles": {
+      "show_artwork": true,
+      "show_comments": true,
+      "visual": true
+    }
+  },
+  "url": "https://soundcloud.com/mdlbeast/dabous-1?in=mdlbeast/sets/burn-beast-riyadh-marathon&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+}
+
+```
+
 Do you know some other options that I forgot? Check the [Contributing](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/blob/master/CONTRIBUTING.md) guide on how to make suggestion for improvements of this plugin! Or you can make a PR if you want.
 
 ## Contributing
