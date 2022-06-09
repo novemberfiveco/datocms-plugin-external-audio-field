@@ -79,9 +79,18 @@ const AudioEmbed = ({ ctx }: Props) => {
     if (error) return;
     setIsLoading(true);
     try {
-      const resp = await fetch(
-        `${providerConfig.url}?url=${prefixWithHttp(url)}&format=json`,
-      ).then((resp) => resp.json());
+      const oEmbedUrl = `${providerConfig.url}?url=${prefixWithHttp(
+        url,
+      )}&format=json`;
+
+      const endpoint =
+        ctx.plugin.attributes.parameters?.proxy &&
+        typeof ctx.plugin.attributes.parameters?.proxy === 'string'
+          ? `${prefixWithHttp(
+              ctx.plugin.attributes.parameters.proxy,
+            )}?endpoint=${oEmbedUrl}`
+          : oEmbedUrl;
+      const resp = await fetch(endpoint).then((resp) => resp.json());
       const previewHtml = modifyIframeSrcUrlParams(resp.html, urlParams);
       setPreview(previewHtml);
 

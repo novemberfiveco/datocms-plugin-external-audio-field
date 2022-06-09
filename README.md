@@ -10,7 +10,13 @@ Created By [November Five](https://www.novemberfive.co/)
 
 Install the plugin by following the DatoCMS guide: [Installing Marketplace Plugins](https://www.datocms.com/docs/general-concepts/plugins#installing-marketplace-plugins).
 
-After installation no configuration is required!
+**IMPORTANT!!**: At the moment Mixcloud does not have the right CORS settings for their /oEmbed endpoint. To solve the you can provide a proxy url through which this plugin will fetch the embed response. We will try to call it with the full oEmbed url as a `endpoint` query parameter. An example would be
+
+```
+[GET] https://yourProxyApiEndpoint.org?endpoint=endpoint=https://www.mixcloud.com/oembed/?url=https://www.mixcloud.com/MDLBEASTRADIO/mdlbeast-mdlbeast-radio-001/&format=json
+```
+
+If you want more help on the setup of this proxy you can always react out via the [Issues](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new)
 
 ## Usage
 
@@ -74,7 +80,7 @@ Do you know some other options that I forgot? Check the [Contributing](https://g
 
 ## Contributing
 
-- **Reporting a bug**: [Open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=bug&template=--bug_report.md&title=) explaining your application's setup and the bug you're encountering.
+- **Reporting a bug**: [Open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=&template=---bug-report.md&title=) explaining your application's setup and the bug you're encountering.
 
 - **Suggesting an improvement**: [Open an issue](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/issues/new?assignees=&labels=&template=---feature-request.md&title=) explaining your improvement or feature so we can discuss and learn more.
 
