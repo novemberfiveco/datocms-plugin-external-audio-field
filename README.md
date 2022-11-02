@@ -6,6 +6,10 @@ Via the [oEmbed](https://oembed.com/) standard we'll fetch the embed and meta da
 
 Created By [November Five](https://www.novemberfive.co/)
 
+## Head ups
+
+This package used to be called `dato-cms-external-audio-field-plugin` but was deprecated in favour of the Dato naming convention, the new package name is now `datocms-plugin-external-audio-field`
+
 ## Installation
 
 Install the plugin by following the DatoCMS guide: [Installing Marketplace Plugins](https://www.datocms.com/docs/general-concepts/plugins#installing-marketplace-plugins).
