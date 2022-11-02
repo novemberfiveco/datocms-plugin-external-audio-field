@@ -11,7 +11,7 @@
     "soundcloud",
     "mixcloud"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "dependencies": {
     "@types/node": "^16.11.36",
@@ -56,5 +56,9 @@
     "coverImage": "docs/cover.png",
     "entryPoint": "build/index.html",
     "permissions": []
-  }
+  },
+  "files": [
+    "build",
+    "docs"
+  ]
 }
