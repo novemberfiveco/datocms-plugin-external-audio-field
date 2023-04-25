@@ -1,26 +1,26 @@
-.inspector {
-  margin-top: var(--spacing-l);
-}
-
-.errorLabel {
-  margin-top: var(--spacing-s);
-}
-
 .inputButtonGroup {
   display: flex;
   gap: var(--spacing-m);
-}
-
-.group:not(:last-of-type) {
-  margin-bottom: var(--spacing-l);
 }
 
 .iframePreview {
   margin-top: var(--spacing-l);
 }
 
-.checkboxGroup {
-  margin-bottom: var(--spacing-l);
+.grid {
+  margin-top: var(--spacing-m);
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  column-gap: var(--spacing-m);
+}
+
+.switchGrid {
   display: flex;
-  gap: var(--spacing-m);
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-xl);
+}
+
+.marginTopLarge {
+  margin-top: var(--spacing-l);
 }

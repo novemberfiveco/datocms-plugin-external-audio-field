@@ -14,16 +14,16 @@
   "version": "1.1.1",
   "private": false,
   "dependencies": {
-    "@types/node": "^16.11.36",
-    "@types/react": "^17.0.45",
-    "datocms-plugin-sdk": "^0.5.2",
-    "datocms-react-ui": "^0.5.2",
+    "@types/node": "^18.16.0",
+    "@types/react": "^18.0.38",
+    "datocms-plugin-sdk": "^0.7.7",
+    "datocms-react-ui": "^0.7.7",
     "lodash": "^4.17.21",
-    "query-string": "^7.1.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "query-string": "^8.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.7.2"
+    "typescript": "^5.0.4"
   },
   "scripts": {
     "start": "cross-env BROWSER='none' PUBLIC_URL='/' react-scripts start",
@@ -45,10 +45,10 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.182",
-    "@types/react-dom": "^18.0.5",
+    "@types/lodash": "^4.14.194",
+    "@types/react-dom": "^18.0.11",
     "cross-env": "^7.0.3",
-    "eslint-plugin-simple-import-sort": "^7.0.0"
+    "eslint-plugin-simple-import-sort": "^10.0.0"
   },
   "datoCmsPlugin": {
     "title": "External Audio Field",
