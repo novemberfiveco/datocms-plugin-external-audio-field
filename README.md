@@ -1,6 +1,6 @@
 # External Audio Field • [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 
-A DatoCMS plugin that allows content editors to easily embed [Soundcloud](https://soundcloud.com/), [Mixcloud](https://www.mixcloud.com/) and [Spotify](https://www.spotify.com/nl/) tracks and playlists.
+A DatoCMS plugin that allows content editors to easily embed [Soundcloud](https://soundcloud.com/), [Mixcloud](https://www.mixcloud.com/), [Spotify](https://www.spotify.com/nl/) and [Anghami](https://www.anghami.com/) tracks and playlists.
 
 Via the [oEmbed](https://oembed.com/) standard we'll fetch the embed and meta data for the track. All the information you select is available via the [Content Delivery Api](https://www.datocms.com/docs/content-delivery-api).
 
@@ -8,7 +8,7 @@ Created By [November Five](https://www.novemberfive.co/)
 
 ## Head ups
 
-This package used to be called `dato-cms-external-audio-field-plugin` but was deprecated in favour of the Dato naming convention, the new package name is now `datocms-plugin-external-audio-field`
+This package used to be called `dato-cms-external-audio-field-plugin` but was deprecated in favour of the DatoCMS naming convention, the new package name is now `datocms-plugin-external-audio-field`
 
 ## Installation
 
@@ -40,7 +40,7 @@ You should end up with something like this:
 
 Output:
 
-```
+```json
 {
   "oEmbed": {
     "version": 1,
@@ -77,7 +77,6 @@ Output:
   },
   "url": "https://soundcloud.com/mdlbeast/dabous-1?in=mdlbeast/sets/burn-beast-riyadh-marathon&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
 }
-
 ```
 
 Do you know some other options that I forgot? Check the [Contributing](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/blob/master/CONTRIBUTING.md) guide on how to make suggestion for improvements of this plugin! Or you can make a PR if you want.
