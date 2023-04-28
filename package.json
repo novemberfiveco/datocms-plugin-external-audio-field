@@ -1,6 +1,6 @@
 {
   "name": "datocms-plugin-external-audio-field",
-  "description": "Add a Mixcloud, Soundcloud, Spotify or Anghami embed field in DatoCMS.",
+  "description": "DatoCMS Plugin to add an embedded Mixcloud, Soundcloud, Spotify or Anghami field",
   "homepage": "https://github.com/novemberfiveco/datocms-plugin-external-audio-field/blob/master/README.md",
   "license": "MIT",
   "keywords": [
