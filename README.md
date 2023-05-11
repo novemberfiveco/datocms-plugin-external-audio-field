@@ -1,6 +1,8 @@
-# External Audio Field • [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
+# External Audio Field
 
-A DatoCMS plugin that allows content editors to easily embed [Soundcloud](https://soundcloud.com/), [Mixcloud](https://www.mixcloud.com/) and [Spotify](https://www.spotify.com/nl/) tracks and playlists.
+[![DatoCMS](https://img.shields.io/static/v1?label=DatoCMS&message=Install&color=FF7751&style=for-the-badge&logo=datocms)](https://www.datocms.com/marketplace/plugins/i/datocms-plugin-external-audio-field) [![npm](https://img.shields.io/npm/v/datocms-plugin-external-audio-field?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/datocms-plugin-external-audio-field) ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/novemberfiveco/datocms-plugin-external-audio-field/pr.yml?branch=master&style=for-the-badge&logo=github) ![Netlify](https://img.shields.io/netlify/f5aba275-c28a-4beb-ae01-411ad44dde66?style=for-the-badge&logo=netlify) [![NPM](https://img.shields.io/npm/l/datocms-plugin-external-audio-field?style=for-the-badge)](LICENSE.txt) [![Powered By NovemberFive](https://img.shields.io/static/v1?label=Powered%20by&message=November%20Five&style=for-the-badge&color=e22a1d&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIxMDYuMTM5OTkxNzYwMjUzOSAxMDYuNjE2OTA1MjEyNDAyMzQgMjg2Ljg2MDAxNTg2OTE0MDYgMjg2Ljg2MDAxNTg2OTE0MDYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0ibTMxMCAyNzAuNzktMjQtMTMuODZ2LTYwLjQ1aC0yNHY0Ni42MmwtMjQtMTMuODd2LTMyLjc1aC0yMy45NXYxOC45M2wtMzAtMTcuMzNhMTIgMTIgMCAwIDAgLTE4IDEwLjM3djk1LjA1aDIzLjk1di03NC4zMWwyNCAxMy44N3Y2MC40NGgyNHYtNDYuNjJsMjQgMTMuODd2MzIuNzVoMjR2LTE4LjkzbDMwIDE3LjMzYTEyIDEyIDAgMCAwIDE4LTEwLjM3di05NWgtMjR6Ij48L3BhdGg+PHBhdGggZD0ibTM4MS43NCAxOTQuMzRhMTQzLjQzIDE0My40MyAwIDEgMCAxMS4yNiA1NS42NiAxNDIuNjggMTQyLjY4IDAgMCAwIC0xMS4yNi01NS42NnptLTQ3LjU3IDEzOS44M2ExMTkgMTE5IDAgMSAxIDM0LjgzLTg0LjE3IDExOC4yNyAxMTguMjcgMCAwIDEgLTM0LjgzIDg0LjE3eiI+PC9wYXRoPjwvZz48L3N2Zz4=&logoWidth=17)](https://www.novemberfive.co/)
+
+A DatoCMS plugin that allows content editors to easily embed [Soundcloud](https://soundcloud.com/), [Mixcloud](https://www.mixcloud.com/), [Spotify](https://www.spotify.com/nl/) and [Anghami](https://www.anghami.com/) tracks and playlists.
 
 Via the [oEmbed](https://oembed.com/) standard we'll fetch the embed and meta data for the track. All the information you select is available via the [Content Delivery Api](https://www.datocms.com/docs/content-delivery-api).
 
@@ -8,7 +10,7 @@ Created By [November Five](https://www.novemberfive.co/)
 
 ## Head ups
 
-This package used to be called `dato-cms-external-audio-field-plugin` but was deprecated in favour of the Dato naming convention, the new package name is now `datocms-plugin-external-audio-field`
+This package used to be called `dato-cms-external-audio-field-plugin` but was deprecated in favour of the DatoCMS naming convention, the new package name is now `datocms-plugin-external-audio-field`
 
 ## Installation
 
@@ -40,7 +42,7 @@ You should end up with something like this:
 
 Output:
 
-```
+```json
 {
   "oEmbed": {
     "version": 1,
@@ -77,7 +79,6 @@ Output:
   },
   "url": "https://soundcloud.com/mdlbeast/dabous-1?in=mdlbeast/sets/burn-beast-riyadh-marathon&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
 }
-
 ```
 
 Do you know some other options that I forgot? Check the [Contributing](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/blob/master/CONTRIBUTING.md) guide on how to make suggestion for improvements of this plugin! Or you can make a PR if you want.

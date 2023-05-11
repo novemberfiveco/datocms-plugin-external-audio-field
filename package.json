@@ -1,6 +1,6 @@
 {
   "name": "datocms-plugin-external-audio-field",
-  "description": "Add a Mixcloud, Soundcloud or Spotify embed field in DatoCMS.",
+  "description": "DatoCMS Plugin to add an embedded Mixcloud, Soundcloud, Spotify or Anghami field",
   "homepage": "https://github.com/novemberfiveco/datocms-plugin-external-audio-field/blob/master/README.md",
   "license": "MIT",
   "keywords": [
@@ -9,28 +9,32 @@
     "audio",
     "spotify",
     "soundcloud",
-    "mixcloud"
+    "mixcloud",
+    "anghami"
   ],
   "version": "1.1.1",
   "private": false,
   "dependencies": {
-    "@types/node": "^16.11.36",
-    "@types/react": "^17.0.45",
-    "datocms-plugin-sdk": "^0.5.2",
-    "datocms-react-ui": "^0.5.2",
+    "@types/node": "^20.1.2",
+    "@types/react": "^18.2.6",
+    "datocms-plugin-sdk": "^0.7.12",
+    "datocms-react-ui": "^0.7.12",
     "lodash": "^4.17.21",
-    "query-string": "^7.1.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "query-string": "^8.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.7.2"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "cross-env BROWSER='none' PUBLIC_URL='/' react-scripts start",
     "build": "cross-env PUBLIC_URL='.' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release": "release-it",
+    "ci:eslint": "eslint --cache --cache-location node_modules/.cache/eslint-cache",
+    "ci:tsc": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
@@ -44,11 +48,21 @@
       "last 1 safari version"
     ]
   },
+  "sideEffects": false,
   "devDependencies": {
-    "@types/lodash": "^4.14.182",
-    "@types/react-dom": "^18.0.5",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "@types/lodash": "^4.14.194",
+    "@types/react-dom": "^18.2.4",
     "cross-env": "^7.0.3",
-    "eslint-plugin-simple-import-sort": "^7.0.0"
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "release-it": "^15.10.3"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "datoCmsPlugin": {
     "title": "External Audio Field",
@@ -60,5 +74,38 @@
   "files": [
     "build",
     "docs"
-  ]
+  ],
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true,
+      "autoGenerate": true,
+      "tokenRef": "GITHUB_TOKEN"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "perf",
+              "section": "Performance improvements"
+            }
+          ]
+        },
+        "infile": "CHANGELOG.md",
+        "ignoreRecommendedBump": true
+      }
+    }
+  }
 }

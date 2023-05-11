@@ -1,3 +1,11 @@
+export const TOGGLE_LABELS: Record<string, string> = {
+  show_artwork: 'Show artwork',
+  show_comments: 'Show comments',
+  visual: 'Visual',
+  hide_cover: 'Hide cover',
+  hide_artwork: 'Hide artwork',
+};
+
 export const PROVIDER_CONFIG = {
   soundcloud: {
     url: 'https://soundcloud.com/oembed',
@@ -69,6 +77,27 @@ export const PROVIDER_CONFIG = {
             hide_cover: false,
             hide_artwork: false,
           },
+        },
+      },
+    },
+  },
+  anghami: {
+    url: 'https://api.anghami.com/rest/v1/oembed.view',
+    options: {
+      variant: {
+        default: {
+          label: 'English',
+          lang: 'en',
+          height: 450,
+          toggles: {},
+          theme: 'fulldark',
+        },
+        arabic: {
+          label: 'Arabic',
+          lang: 'ar',
+          height: 450,
+          toggles: {},
+          theme: 'fulldark',
         },
       },
     },

@@ -3,12 +3,14 @@ import _omit from 'lodash/omit';
 import { PROVIDER_CONFIG } from 'constants/providers';
 import { FieldFormValues } from 'types/plugin.types';
 
+import type { Options } from 'components/PlayerOptions';
+
 type ProviderKey = keyof typeof PROVIDER_CONFIG;
 
 export const getProviderDefaultOptions = (
   formValues: FieldFormValues | null,
-  config?: typeof PROVIDER_CONFIG[ProviderKey],
-) => {
+  config?: (typeof PROVIDER_CONFIG)[ProviderKey],
+): Options => {
   const variantOptions =
     config && 'options' in config ? config.options.variant : undefined;
 

@@ -1,26 +1,31 @@
-.inspector {
-  margin-top: var(--spacing-l);
-}
-
-.errorLabel {
-  margin-top: var(--spacing-s);
-}
-
-.inputButtonGroup {
-  display: flex;
-  gap: var(--spacing-m);
-}
-
-.group:not(:last-of-type) {
-  margin-bottom: var(--spacing-l);
-}
-
 .iframePreview {
   margin-top: var(--spacing-l);
 }
 
-.checkboxGroup {
-  margin-bottom: var(--spacing-l);
+.grid {
+  margin-top: var(--spacing-m);
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  column-gap: var(--spacing-m);
+}
+
+.switchGrid {
   display: flex;
-  gap: var(--spacing-m);
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-xl);
+}
+
+.marginTopLarge {
+  margin-top: var(--spacing-l);
+}
+
+.code {
+  padding: var(--spacing-m) var(--spacing-l);
+  display: inline-block;
+  margin-top: var(--spacing-l);
+  margin-bottom: var(--spacing-l);
+  background-color: var(--light-bg-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px #0000001a;
 }

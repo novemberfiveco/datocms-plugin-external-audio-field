@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { memo, useState } from 'react';
 
-import { FormLabel } from 'datocms-react-ui';
+import { FormLabel, SwitchField } from 'datocms-react-ui';
 import classes from 'entrypoints/styles.module.css';
+
+import { TOGGLE_LABELS } from 'constants/providers';
 
 import PlayerVariantSelect, { VariantOption } from './PlayerVariantSelect';
 
@@ -51,7 +53,7 @@ const PlayerOptions = ({
   return (
     <div>
       {!!initialValues.options?.length && (
-        <div className={classes.group}>
+        <div className={classes.marginTopLarge}>
           <PlayerVariantSelect
             value={options.variant}
             onVariantChange={(option) => handleOptionChange('variant', option)}
@@ -60,22 +62,21 @@ const PlayerOptions = ({
         </div>
       )}
       {Object.values(options?.toggles ?? {}).length > 0 && (
-        <div className={classes.group}>
+        <div className={classes.marginTopLarge}>
           <FormLabel htmlFor="">Options</FormLabel>
-          <div className={classes.checkboxGroup}>
+          <div className={classes.switchGrid}>
             {Object.keys(options?.variant?.defaultToggles ?? {}).map((key) => {
               return (
                 <div key={key}>
-                  <input
-                    type="checkbox"
-                    onChange={(e) =>
-                      handleToggleChange({ [key]: e.target.checked })
-                    }
+                  <SwitchField
+                    name={key}
                     id={key}
-                    value={key}
-                    checked={!!options.toggles?.[key]}
+                    label={TOGGLE_LABELS[key]}
+                    onChange={(newValue) =>
+                      handleToggleChange({ [key]: newValue })
+                    }
+                    value={!!options.toggles?.[key]}
                   />
-                  <label htmlFor={key}>{key}</label>
                 </div>
               );
             })}
@@ -86,4 +87,4 @@ const PlayerOptions = ({
   );
 };
 
-export default React.memo(PlayerOptions);
+export default memo(PlayerOptions);

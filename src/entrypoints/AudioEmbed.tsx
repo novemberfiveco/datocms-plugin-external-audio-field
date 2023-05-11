@@ -1,16 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { FormEventHandler, memo, useEffect, useRef, useState } from 'react';
 
 import { RenderFieldExtensionCtx } from 'datocms-plugin-sdk';
 import {
   Button,
   Canvas,
+  FieldGroup,
+  Form,
   FormLabel,
   Spinner,
-  TextInput,
+  TextField,
 } from 'datocms-react-ui';
 import _get from 'lodash/get';
 import _omit from 'lodash/omit';
-import { unstable_batchedUpdates } from 'react-dom';
 
 import { getProviderDefaultOptions } from 'utils/audioEmbed.utils';
 import { modifyIframeSrcUrlParams } from 'utils/browser.utils';
@@ -50,21 +51,15 @@ const AudioEmbed = ({ ctx }: Props) => {
 
   useEffect(() => {
     if (!url) {
-      unstable_batchedUpdates(() => {
-        setPreview('');
-        fieldJsonRef.current = null;
-
-        ctx.setFieldValue(ctx.fieldPath, null);
-      });
+      setPreview('');
+      fieldJsonRef.current = null;
+      ctx.setFieldValue(ctx.fieldPath, null);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [url]);
+  }, [ctx, url]);
 
   const handleUrlChange = (newValue: string) => {
-    unstable_batchedUpdates(() => {
-      setUrl(newValue);
-      setError(isValidHost(newValue));
-    });
+    setUrl(newValue);
+    setError(isValidHost(newValue));
   };
 
   const handleBlur = () => {
@@ -90,25 +85,32 @@ const AudioEmbed = ({ ctx }: Props) => {
               ctx.plugin.attributes.parameters.proxy,
             )}?endpoint=${oEmbedUrl}`
           : oEmbedUrl;
-      const resp = await fetch(endpoint).then((resp) => resp.json());
-      const previewHtml = modifyIframeSrcUrlParams(resp.html, urlParams);
-      setPreview(previewHtml);
+      const response = await fetch(endpoint);
+      if (response.ok) {
+        const resp = await response.json();
+        const previewHtml = modifyIframeSrcUrlParams(resp.html, urlParams);
 
-      await ctx.setFieldValue(
-        ctx.fieldPath,
-        JSON.stringify({
-          oEmbed: { ...resp, html: previewHtml },
-          options: _omit(options, 'options'),
-          url,
-        }),
-      );
+        setPreview(previewHtml);
+
+        await ctx.setFieldValue(
+          ctx.fieldPath,
+          JSON.stringify({
+            oEmbed: { ...resp, html: previewHtml },
+            options: _omit(options, 'options'),
+            url,
+          }),
+        );
+      } else {
+        setError('Could not fetch the preview for this url');
+      }
     } catch (error) {
       setError('Could not fetch the preview for this url');
     }
 
     setIsLoading(false);
   };
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     handleFetchOEmbed(defaults);
   };
@@ -119,61 +121,52 @@ const AudioEmbed = ({ ctx }: Props) => {
 
   return (
     <Canvas ctx={ctx}>
-      <div
-        style={{
-          border: '1px dashed #f0f0f0',
-          padding: 24,
-        }}
-      >
-        <div className={classes.group}>
-          <form onSubmit={handleSubmit}>
-            <FormLabel htmlFor="url">
-              Copy and paste the address of a Soundcloud, Mixcloud or Spotify
-              track/playlist here:
-            </FormLabel>
-            <div className={classes.inputButtonGroup}>
-              <TextInput
+      <Form onSubmit={handleSubmit}>
+        <FieldGroup>
+          <div className={classes.grid}>
+            <div>
+              <TextField
                 id="url"
                 name="url"
-                onBlur={handleBlur}
+                label="URL to embed"
                 onChange={handleUrlChange}
-                placeholder="Audio url*"
+                placeholder="Audio url"
                 value={url}
-                disabled={isLoading}
+                textInputProps={{ disabled: isLoading, onBlur: handleBlur }}
+                required
+                error={error}
+                hint="Copy and paste the address of a Soundcloud, Mixcloud, Anghami or Spotify
+              track/playlist here"
               />
-              <Button
-                disabled={!url || !!error || isLoading || url === prevUrl}
-                type="submit"
-                buttonSize="xxs"
-                buttonType="primary"
-              >
-                {isLoading ? <Spinner /> : 'Submit'}
-              </Button>
             </div>
-            {error && (
-              <FormLabel className={classes.errorLabel} htmlFor="" error>
-                {error}
-              </FormLabel>
-            )}
-          </form>
-        </div>
-        {preview && (
-          <div className={classes.group}>
+            <Button
+              disabled={!url || !!error || isLoading || url === prevUrl}
+              type="submit"
+              buttonSize="s"
+              buttonType="primary"
+            >
+              {isLoading ? <Spinner /> : 'Submit'}
+            </Button>
+          </div>
+        </FieldGroup>
+      </Form>
+
+      {preview && (
+        <>
+          <FieldGroup>
             <PlayerOptions
               initialValues={defaults}
               onOptionsChange={handleOptionsChange}
             />
-          </div>
-        )}
-        {preview && (
+          </FieldGroup>
           <div className={classes.iframePreview}>
             <FormLabel htmlFor="">Preview</FormLabel>
             <PlayerPreview html={preview} />
           </div>
-        )}
-      </div>
+        </>
+      )}
     </Canvas>
   );
 };
 
-export default React.memo(AudioEmbed);
+export default memo(AudioEmbed);

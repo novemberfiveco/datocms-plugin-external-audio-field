@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 import { FormLabel, SelectInput } from 'datocms-react-ui';
 
@@ -24,9 +24,7 @@ const PlayerVariantSelect = ({
       <FormLabel htmlFor="variant">Player variant</FormLabel>
       <SelectInput
         id="variant"
-        onChange={(option) => {
-          onVariantChange(option);
-        }}
+        onChange={onVariantChange}
         value={value}
         options={options}
       />
@@ -34,4 +32,4 @@ const PlayerVariantSelect = ({
   );
 };
 
-export default PlayerVariantSelect;
+export default memo(PlayerVariantSelect);
