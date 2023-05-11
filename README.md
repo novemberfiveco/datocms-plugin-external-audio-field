@@ -1,4 +1,6 @@
-# External Audio Field • [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
+# External Audio Field
+
+[![NPM](https://img.shields.io/npm/l/datocms-plugin-external-audio-field?style=for-the-badge)](LICENSE.txt) ![npm](https://img.shields.io/npm/v/datocms-plugin-external-audio-field?style=for-the-badge)
 
 A DatoCMS plugin that allows content editors to easily embed [Soundcloud](https://soundcloud.com/), [Mixcloud](https://www.mixcloud.com/), [Spotify](https://www.spotify.com/nl/) and [Anghami](https://www.anghami.com/) tracks and playlists.
 

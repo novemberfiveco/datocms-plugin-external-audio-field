@@ -1,0 +1,35 @@
+name: Javascript CI
+# Controls when the workflow will run
+on: [pull_request]
+
+permissions:
+  packages: read
+  contents: read
+
+env:
+  # Ensure all steps have access to the N5 registry token
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  lint:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.15.0'
+          cache: 'npm'
+
+      - name: Install modules
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run ci:eslint
+
+      - name: Run TSC
+        run: npm run ci:tsc

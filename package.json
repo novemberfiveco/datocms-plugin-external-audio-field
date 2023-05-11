@@ -15,10 +15,10 @@
   "version": "1.1.1",
   "private": false,
   "dependencies": {
-    "@types/node": "^18.16.0",
-    "@types/react": "^18.2.0",
-    "datocms-plugin-sdk": "^0.7.7",
-    "datocms-react-ui": "^0.7.7",
+    "@types/node": "^20.1.2",
+    "@types/react": "^18.2.6",
+    "datocms-plugin-sdk": "^0.7.12",
+    "datocms-react-ui": "^0.7.12",
     "lodash": "^4.17.21",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
@@ -32,7 +32,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepublishOnly": "npm run build",
-    "release": "release-it"
+    "release": "release-it",
+    "ci:eslint": "eslint --cache --cache-location node_modules/.cache/eslint-cache",
+    "ci:tsc": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
@@ -46,13 +48,18 @@
       "last 1 safari version"
     ]
   },
+  "sideEffects": false,
   "devDependencies": {
     "@release-it/conventional-changelog": "^5.1.1",
     "@types/lodash": "^4.14.194",
-    "@types/react-dom": "^18.2.0",
+    "@types/react-dom": "^18.2.4",
     "cross-env": "^7.0.3",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "release-it": "^15.10.1"
+    "release-it": "^15.10.3"
   },
   "publishConfig": {
     "access": "public"

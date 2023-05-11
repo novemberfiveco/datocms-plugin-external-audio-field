@@ -9,7 +9,9 @@ let container: HTMLElement | null = null;
 export function render(component: React.ReactNode): void {
   if (!container) {
     container = document.getElementById('root');
-    const root = createRoot(container!);
-    root.render(<StrictMode>{component}</StrictMode>);
+    if (container) {
+      const root = createRoot(container);
+      root.render(<StrictMode>{component}</StrictMode>);
+    }
   }
 }

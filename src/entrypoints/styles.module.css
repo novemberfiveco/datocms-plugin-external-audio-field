@@ -1,8 +1,3 @@
-.inputButtonGroup {
-  display: flex;
-  gap: var(--spacing-m);
-}
-
 .iframePreview {
   margin-top: var(--spacing-l);
 }
@@ -23,4 +18,14 @@
 
 .marginTopLarge {
   margin-top: var(--spacing-l);
+}
+
+.code {
+  padding: var(--spacing-m) var(--spacing-l);
+  display: inline-block;
+  margin-top: var(--spacing-l);
+  margin-bottom: var(--spacing-l);
+  background-color: var(--light-bg-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px #0000001a;
 }
