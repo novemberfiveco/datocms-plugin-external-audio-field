@@ -1,5 +1,12 @@
 
 
+### [1.2.2](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/compare/1.2.1...1.2.2) (2023-05-16)
+
+
+### Bug Fixes
+
+* always set iframe width to 100% ([75d0b08](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/commit/75d0b084b3b6f496a9df81682dd84ab5e4cd1c5f))
+
 ### [1.2.1](https://github.com/novemberfiveco/datocms-plugin-external-audio-field/compare/1.2.0...1.2.1) (2023-05-16)
 
 
