@@ -5,7 +5,8 @@ export const modifyIframeSrcUrlParams = (
   options: { [key: string]: string | number | boolean } = {},
 ) => {
   const div = document.createElement('div');
-  div.innerHTML = iframeString;
+  // Remove style so end user has more control over it
+  div.innerHTML = iframeString.replace(/style='[^']*'/, '');
   const iframe = div.querySelector('iframe');
 
   if (!iframe) return '';
