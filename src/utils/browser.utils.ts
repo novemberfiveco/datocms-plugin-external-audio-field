@@ -21,6 +21,7 @@ export const modifyIframeSrcUrlParams = (
     iframe.height = `${options.height}`;
   }
 
+  iframe.width = '100%';
   iframe.src = queryString.stringifyUrl({ ...qs, query: newQuery });
 
   return div.innerHTML;
