@@ -12,7 +12,7 @@
     "mixcloud",
     "anghami"
   ],
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": false,
   "dependencies": {
     "@types/node": "^20.1.2",
